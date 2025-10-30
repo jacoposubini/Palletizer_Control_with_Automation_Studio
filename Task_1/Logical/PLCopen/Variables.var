@@ -1,0 +1,13 @@
+VAR
+	State : State_type;
+	GA_test : GenericAxis_FB;
+	velocity : REAL := 100;
+	ConveyorEnable : BOOL;
+	CutterEnable : BOOL;
+	Enable : BOOL;
+	result : INT;
+	Command : WORD := MOVE_VELOCITY;
+	Actuation : INT;
+	Cutter : GenericAxis_FB;
+	Conveyor : GenericAxis_FB;
+END_VAR

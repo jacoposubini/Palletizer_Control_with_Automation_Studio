@@ -1,0 +1,63 @@
+(*pallet_lifter*)
+VAR
+	pallet_lifter : GenericAxis;
+END_VAR
+VAR CONSTANT
+	PALLET_LIFTER_IDLE : REAL := 0.0;
+	PALLET_LIFTER_RELEASE : REAL := -0.258;
+	PALLET_LIFTER_GRASP : REAL := -0.12;
+END_VAR
+VAR
+	PalletLifterPositionReached : BOOL;
+	pallet_lifter_goal : REAL;
+END_VAR
+VAR CONSTANT
+	pallet_lifter_timer : INT := 200;
+END_VAR
+(*pallet_fork*)
+VAR
+	pallet_fork : GenericDevice_FB;
+END_VAR
+VAR CONSTANT
+	pallet_fork_enable_time : INT := 200;
+	pallet_fork_disable_time : INT := 20;
+END_VAR
+VAR
+	pallet_fork_enable_request : BOOL;
+	pallet_fork_disable_request : BOOL;
+END_VAR
+(*pallet_conveyor_1*)
+VAR
+	pallet_conveyor_1 : GenericDevice_FB;
+END_VAR
+VAR CONSTANT
+	pallet_conveyor_1_enable_time : INT := 5;
+	pallet_conveyor_1_disable_time : INT := 5;
+END_VAR
+VAR
+	pallet_conveyor_1_enable_request : BOOL;
+	pallet_conveyor_1_disable_reques : BOOL;
+END_VAR
+(*pallet_conveyor_2*)
+VAR
+	pallet_conveyor_2 : GenericAxis;
+	pallet_conveyor_2_velocity : REAL;
+END_VAR
+VAR CONSTANT
+	LOW_VELOCITY : REAL := 0.1;
+	FAST_VELOCITY : REAL := 0.5;
+	STANDSTILL : REAL := 0.0;
+END_VAR
+VAR
+	PalletConveyor2VelReached : BOOL;
+	pallet_conveyor_2_timer : INT;
+	State : StateType;
+	EmergencyStopMachine : INT;
+	OldState : StateType;
+	ImmediateStopMachine : INT;
+	SuspendDevices : BOOL;
+	OldPalletConveyor2Command : WORD;
+	OldPalletLifterCommand : WORD;
+	OldPositionPalletLifterGoal : REAL;
+	OldPositionPalletConv2Vel : REAL;
+END_VAR

@@ -1,0 +1,30 @@
+
+TYPE
+	State_type : 
+		(
+		CutterMoveBackward,
+		CutterCompleted,
+		ConveyorStopping,
+		ConveyorMoving,
+		ConveyorStarting,
+		AxisEnabled,
+		InitializeAxis,
+		WaitProduct,
+		Initialize,
+		Init,
+		StopState,
+		HaltState,
+		WaitForConveyor,
+		CheckPower,
+		CheckEnable,
+		CutterMotion,
+		CutterMoveForward,
+		ConveyorHolding,
+		CutterForward,
+		CutterBackward,
+		CamEnabled,
+		CheckCamUpdate1,
+		CheckCamUpdate2,
+		CheckReset
+		);
+END_TYPE

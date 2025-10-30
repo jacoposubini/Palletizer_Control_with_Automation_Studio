@@ -1,0 +1,3 @@
+VAR
+	Counter : INT;
+END_VAR

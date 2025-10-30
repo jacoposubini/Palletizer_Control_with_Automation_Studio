@@ -1,0 +1,50 @@
+VAR
+	SignalManagement : SignalManagement_FB;
+	SignalOutputs : DWORD;
+END_VAR
+VAR CONSTANT
+	mPusherXActuatorFault : INT := 1;
+	mPusherXDisableSensorFault : INT := 2;
+	mPusherXEnableSensorFault : INT := 3;
+	mPusherZActuatorFault : INT := 4;
+	mPusherZDisableSensorFault : INT := 5;
+	mPusherZEnableSensorFault : INT := 6;
+	mSlideRailRightActuatorFault : INT := 7;
+	mSlideRailRightDisableFault : INT := 8;
+	mSlideRailRightEnableFault : INT := 9;
+	mVacuumBoxCraneActuatorFault : INT := 10;
+	mVacuumBoxCraneDisableFault : INT := 11;
+	mVacuumBoxCraneEnableFault : INT := 12;
+	mCardboardActuatorFault : INT := 13;
+	mCardboardDisableFault : INT := 14;
+	mCardboardEnableFault : INT := 15;
+	mBoxCraneFaultSignal : INT := 16;
+	mGantryCraneFaultSignal : INT := 17;
+	mPusherActuatorFault : INT := 18;
+	mPusherDisableSensorFault : INT := 19;
+	mPusherEnableSensorFault : INT := 20;
+	mConveyorIfActuatorFault : INT := 21;
+	mConveyorIfDisableSensorFault : INT := 22;
+	mConveyorIfEnableSensorFault : INT := 23;
+	mConveyorTurn1ActuatorFault : INT := 24;
+	mConveyorTurn1DisableSensorFault : INT := 25;
+	mConveyorTurn1EnableSensorFault : INT := 26;
+	mConveyorEndActuatorFault : INT := 27;
+	mConveyorEndDisableSensorFault : INT := 28;
+	mConveyorEndEnableSensorFault : INT := 29;
+	mCarriagePositionFaultSignal : INT := 30;
+	mPalletForkActuatorFault : INT := 31;
+	mPalletForkDisableSensorFault : INT := 32;
+	mPalletForkEnableSensorFault : INT := 33;
+	mPalletLifterFaultSignal : INT := 34;
+	mPalletConv1ActuatorFault : INT := 35;
+	mPalletConv1DisableSensorFault : INT := 36;
+	mPalletConv1SensorFault : INT := 37;
+	mPalletConv2FaultSignal : INT := 38;
+	mTurnpusherActuatorFault : INT := 39;
+	mTurnpusherDisableSensorFault : INT := 40;
+	mTurnpusherEnableSensorFault : INT := 41;
+	mImmediateStopButton : INT := 42;
+	mEmergencyStopButton : INT := 43;
+	mOnPhaseStopButton : INT := 44;
+END_VAR

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="PagePackage" PackageType="PagePackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Page description">Page.page</Object>
+    <Object Type="File">ContentMain.content</Object>
+    <Object Type="File">ContentButton.content</Object>
+    <Object Type="File">ContentInformation.content</Object>
+    <Object Type="File">ContentHome.content</Object>
+    <Object Type="File">ContentError.content</Object>
+    <Object Type="File">ContentBar.content</Object>
+  </Objects>
+</Package>

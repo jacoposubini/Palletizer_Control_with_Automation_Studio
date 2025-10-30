@@ -1,0 +1,23 @@
+VAR
+	MachineState : State_type;
+	ConveyorEnable : BOOL;
+	CutterEnable : BOOL;
+	Cutter : GenericAxis_FB;
+	Conveyor : GenericAxis_FB;
+	InitializeConveyor : BOOL;
+	InitializeCutter : BOOL;
+	ConveyorDisable : BOOL;
+	CutterDisable : BOOL;
+	ConveyorState : State_type;
+	CutterState : State_type;
+	ConveyorAxisEnable : BOOL;
+	CutterAxisEnable : BOOL;
+	FutureStop : BOOL;
+	CoveyorState : BOOL;
+	ConveyorStopped : BOOL;
+	CutterStopped : BOOL;
+	EmergencyStateMachine : INT;
+	Count : INT;
+	ToggleLights : BOOL;
+	OldCutterPose : INT;
+END_VAR

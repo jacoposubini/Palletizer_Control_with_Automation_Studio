@@ -1,0 +1,8 @@
+VAR
+	State : StateType;
+	CounterFloor : INT;
+	OldState : StateType;
+	ImmediateStopMachine : INT;
+	EmergencyStopMachine : INT;
+	OnPhaseStopMachine : INT;
+END_VAR

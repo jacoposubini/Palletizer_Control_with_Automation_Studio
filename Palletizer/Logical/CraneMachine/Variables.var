@@ -1,0 +1,94 @@
+(*box_crane*)
+VAR
+	box_crane : GenericAxis;
+END_VAR
+VAR CONSTANT
+	BOX_CRANE_HOMING_POSITION : REAL := 0.0;
+	BOX_CRANE_FLOOR1_POSITION : REAL := -0.2;
+	BOX_CRANE_FLOOR2_POSITION : REAL := 0.01;
+	CARDBOARD_PICK_POSITION : REAL := -0.195;
+END_VAR
+VAR
+	BoxCranePositionReached : BOOL;
+	box_crane_goal : REAL;
+END_VAR
+VAR CONSTANT
+	box_crane_timer : INT := 200;
+END_VAR
+(*gantry_crane*)
+VAR
+	gantry_crane : GenericAxis;
+END_VAR
+VAR CONSTANT
+	GANTRY_CRANE_HOMING_POSITION : REAL := 0.0;
+	GANTRY_CRANE_CARDBOARD_POSITION : REAL := -1.11;
+	GANTRY_CRANE_PALLET_POSITION : REAL := -1.3;
+END_VAR
+VAR
+	GantryCranePositionReached : BOOL;
+	gantry_crane_goal : REAL;
+END_VAR
+VAR CONSTANT
+	gantry_crane_timer : INT := 200;
+END_VAR
+(*pusher_x request*)
+VAR
+	pusher_x : GenericDevice_FB;
+	pusher_x_enable_request : BOOL;
+	pusher_x_disable_request : BOOL;
+END_VAR
+VAR CONSTANT
+	pusher_x_enable_time : INT := 5;
+	pusher_x_disable_time : INT := 5;
+END_VAR
+(*pusher_z request*)
+VAR
+	pusher_z : GenericDevice_FB;
+	pusher_z_enable_request : BOOL;
+	pusher_z_disable_request : BOOL;
+END_VAR
+VAR CONSTANT
+	pusher_z_enable_time : INT := 5;
+	pusher_z_disable_time : INT := 5;
+END_VAR
+(*slide_rail_right request*)
+VAR
+	slide_rail_right : GenericDevice_FB;
+	slide_rail_right_enable_request : BOOL;
+	slide_rail_right_disable_request : BOOL;
+END_VAR
+VAR CONSTANT
+	slide_rail_right_enable_time : INT := 10;
+	slide_rail_right_disable_time : INT := 10;
+END_VAR
+(*vacuum_box_crane request*)
+VAR
+	vacuum_box_crane : GenericDevice_FB;
+	vacuum_box_crane_enable_request : BOOL;
+	vacuum_box_crane_disable_request : BOOL;
+END_VAR
+VAR CONSTANT
+	vacuum_box_crane_enable_time : INT := 200;
+	vacuum_box_crane_disable_time : INT := 5;
+END_VAR
+(*cardboard*)
+VAR
+	cardboard : GenericDevice_FB;
+	cardboard_enable_request : BOOL;
+	cardboard_disable_request : BOOL;
+END_VAR
+VAR CONSTANT
+	cardboard_enable_time : INT := 5;
+	cardboard_disable_time : INT := 5;
+END_VAR
+VAR
+	State : StateType;
+	CounterFloor : INT;
+	EmergencyStopMachine : INT;
+	ImmediateStopMachine : INT;
+	OldState : StateType;
+	OldBoxCraneCommand : WORD;
+	OldGantryCraneCommand : WORD;
+	OldPositionBoxCraneGoal : REAL;
+	OldPositionGantryCraneGoal : REAL;
+END_VAR

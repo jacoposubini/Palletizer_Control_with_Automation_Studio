@@ -1,0 +1,108 @@
+VAR
+	State : StateType;
+END_VAR
+(*Generic device variable interface for on/off actuations*)
+(*conveyor_if*)
+VAR
+	conveyor_if : GenericDevice_FB;
+END_VAR
+VAR CONSTANT
+	conveyor_if_enable_time : INT := 5;
+	conveyor_if_disable_time : INT := 5;
+END_VAR
+VAR
+	conveyor_if_enable_request : BOOL;
+	conveyor_if_disable_request : BOOL;
+END_VAR
+(*conveyot_turn1*)
+VAR
+	conveyor_turn1 : GenericDevice_FB;
+END_VAR
+VAR CONSTANT
+	conveyor_turn1_enable_time : INT := 5;
+	conveyor_turn1_disable_time : INT := 5;
+END_VAR
+VAR
+	conveyor_turn1_enable_request : BOOL;
+	conveyor_turn1_disable_request : BOOL;
+END_VAR
+(*conveyor_end*)
+VAR
+	conveyor_end : GenericDevice_FB;
+END_VAR
+VAR CONSTANT
+	conveyor_end_enable_time : INT := 5;
+	conveyor_end_disable_time : INT := 5;
+END_VAR
+VAR
+	conveyor_end_enable_request : BOOL;
+	conveyor_end_disable_request : BOOL;
+END_VAR
+(*pusher*)
+VAR
+	pusher : GenericDevice_FB;
+END_VAR
+VAR CONSTANT
+	pusher_enable_time : INT := 200;
+	pusher_disable_time : INT := 200;
+END_VAR
+VAR
+	pusher_enable_request : BOOL;
+	pusher_disable_request : BOOL;
+END_VAR
+(*turnpusher*)
+VAR
+	turnpusher : GenericDevice_FB;
+END_VAR
+VAR CONSTANT
+	turnpusher_enable_time : INT := 200;
+	turnpusher_disable_time : INT := 200;
+END_VAR
+VAR
+	turnpusher_enable_request : BOOL;
+	turnpusher_disable_request : BOOL;
+END_VAR
+(*carriage*)
+VAR
+	carriage : GenericAxis;
+	carriage_goal : REAL;
+END_VAR
+VAR CONSTANT
+	carriage_timer : INT := 100;
+END_VAR
+VAR
+	carriagePositionReached : BOOL;
+	carriageSetPoint : USINT;
+	carriage_homed : BOOL;
+END_VAR
+VAR CONSTANT
+	HOME_POSITION : REAL := 0.0;
+	CARRIAGE_MID_PUSH : REAL := 0.44;
+	CARRIAGE_TOTAL_PUSH : REAL := 1.11;
+END_VAR
+(*Insert your comment here.*)
+VAR
+	CounterBox : {REDUND_UNREPLICABLE} INT := 0;
+	CounterLayer : INT;
+	CounterFloor : INT;
+	BoxNumber : INT;
+	LayerNumber : INT;
+END_VAR
+(*Fault Laser sensors management*)
+VAR CONSTANT
+	LaserSensorIRTimer : INT := 10;
+END_VAR
+VAR
+	LaserSensorIRFault : BOOL;
+END_VAR
+VAR CONSTANT
+	LaserSensor2IRTimer : INT := 10;
+END_VAR
+VAR
+	OldState : StateType;
+	EmergencyStopMachine : INT;
+	ImmediateStopMachine : INT;
+	SuspendDevices : BOOL;
+	OldPositionCarriageGoal : REAL;
+	OldCarriageCommand : WORD;
+END_VAR

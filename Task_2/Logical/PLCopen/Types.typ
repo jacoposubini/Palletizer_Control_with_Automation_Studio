@@ -1,0 +1,13 @@
+
+TYPE
+	State_type : 
+		(
+		IDLE,
+		ENABLE_AXES,
+		BELT_MOVING,
+		BELT_STOPPING,
+		BELT_HOLDING,
+		CUTTER_BACK,
+		CUTTER_END
+		);
+END_TYPE

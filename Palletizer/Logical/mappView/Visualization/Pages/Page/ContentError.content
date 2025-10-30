@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="content_1" height="440" width="600" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch1" top="40" left="130" width="80" height="40" zIndex="0" text="OFF" cornerRadius="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="90" left="75" width="180" zIndex="1" text="Pusher Actuator Fault" backColor="rgba(192, 192, 192, 1)" fontSize="15px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label2" top="90" left="340" width="170" zIndex="2" text="Pusher Disable Fault" backColor="rgba(192, 192, 192, 1)" fontSize="15px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label3" top="230" left="100" width="170" zIndex="3" text="Box Crane Fault" backColor="rgba(192, 192, 192, 1)" fontSize="15px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label4" top="230" left="335" width="190" zIndex="4" text="Vacuum Actuator Fault" backColor="rgba(192, 192, 192, 1)" fontSize="15px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label5" top="370" left="90" width="170" zIndex="5" text="Fork Actuator Fault" backColor="rgba(192, 192, 192, 1)" fontSize="15px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label6" top="370" left="355" width="170" zIndex="6" text="Fork Enable Fault" backColor="rgba(192, 192, 192, 1)" fontSize="15px" bold="true" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch2" top="40" left="390" width="80" height="40" zIndex="7" text="OFF" cornerRadius="20px" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch3" top="180" left="130" width="80" height="40" zIndex="8" text="OFF" cornerRadius="20px" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch4" top="180" left="390" width="80" height="40" zIndex="9" text="OFF" cornerRadius="20px" foreColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch5" top="320" left="130" width="80" height="40" zIndex="10" text="OFF" cornerRadius="20px" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch6" top="320" left="390" width="80" height="40" zIndex="11" text="OFF" cornerRadius="20px" />
+  </Widgets>
+</Content>

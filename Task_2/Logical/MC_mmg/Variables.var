@@ -1,0 +1,34 @@
+(*Conveyor*)
+VAR
+	Cutter : CamFB;
+	Conveyor : CamFB;
+	MachineState : State_type;
+	ConveyorParameters : MpAxisBasicParType;
+END_VAR
+(*Cutter*)
+VAR
+	CutterParameters : MpAxisBasicParType;
+END_VAR
+(*Coupling*)
+VAR
+	CouplingParameters : MpAxisCouplingParType;
+	ConveyorEnable : BOOL;
+	CutterEnable : BOOL;
+	InitializeConveyor : BOOL;
+	InitializeCutter : BOOL;
+	ConveyorDisable : BOOL;
+	CutterDisable : BOOL;
+	ConveyorState : State_type;
+	CutterState : State_type;
+	ConveyorAxisEnable : BOOL;
+	CutterAxisEnable : BOOL;
+	FutureStop : BOOL;
+	CoveyorState : BOOL;
+	ConveyorStopped : BOOL;
+	CutterStopped : BOOL;
+	EmergencyStateMachine : INT;
+	CamOffset : LREAL;
+	CutterWorking : BOOL;
+	Count : DINT;
+	ToggleLights : BOOL;
+END_VAR

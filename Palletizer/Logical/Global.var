@@ -1,0 +1,159 @@
+(*Feeder*)
+(*Inputs*)
+VAR
+	ResetButton : BOOL;
+	laser_sensor_IR : BOOL;
+	laser_sensor_2_IR : BOOL;
+	carriage_2_AXIS : REAL;
+	carriage_2_RCHD : BOOL;
+	turnpusher_LBK : BOOL;
+	turnpusher_LFR : BOOL;
+	pusher_LBK : BOOL;
+	pusher_LFR : BOOL;
+END_VAR
+(*Outputs*)
+VAR
+	pusher_FW : BOOL;
+	conveyor_if_FWD : BOOL;
+	conveyor_turn1_FWD : BOOL;
+	conveyor_end_FWD : BOOL;
+	carrige_2_TGT_POS : REAL;
+	turnpusher_FWD : BOOL;
+	turnpusher_BWD : BOOL;
+END_VAR
+(*GenericDevice Feeder requests*)
+VAR
+	conveyor_if_enable_request : BOOL;
+	conveyor_if_disable_request : BOOL;
+	conveyor_turn1_enable_request : BOOL;
+	conveyor_turn1_disable_request : BOOL;
+	conveyor_end_enable_request : BOOL;
+	conveyor_end_disable_request : BOOL;
+	pusher_enable_request : BOOL;
+	pusher_disable_request : BOOL;
+	turnpusher_enable_request : BOOL;
+	turnpusher_disable_request : BOOL;
+	OperationType : INT := 0;
+END_VAR
+(*Feeder-Main communication variable*)
+VAR
+	StartMachine : BOOL;
+	FeederInitDone : BOOL;
+	FeederStart : BOOL;
+	FeederHomed : BOOL;
+	FeederReady : BOOL;
+	FeederEnable : BOOL;
+	FeederIsReady : BOOL;
+	CraneEnable : BOOL;
+	CraneIsReady : BOOL;
+	CraneStart : BOOL;
+	FeederStop : BOOL;
+	vacuum_box_crane_VACUUM : BOOL;
+	box_crane_AXIS : REAL;
+	gantry_crane_AXIS : REAL;
+	gantry_crane_TGT_POS : REAL;
+	box_crane_TGT_POS : REAL;
+	cardboard_TRIG : BOOL;
+	vaccum_box_crane_GRIP : BOOL;
+	slide_rail_right_EN : BOOL;
+	pusher_z_EN : BOOL;
+	pusher_x_EN : BOOL;
+END_VAR
+(*Crane-Main communication variable*)
+VAR
+	CraneStop : BOOL;
+	CraneHomed : BOOL;
+	FeederHoming : BOOL;
+	Trigger : BOOL;
+	autoreset : BOOL;
+	EmergencyStop : BOOL;
+	vacuum_box_crane_GRIP : BOOL;
+	MainEnable : BOOL;
+	MainStart : BOOL;
+	PalletHandlerEnable : BOOL;
+	pallet_conveyor_2_ACT_VEL : REAL;
+	PalletHandlerStart : BOOL;
+	pallet_light_barrier_2_IR : BOOL;
+	pallet_light_barrier_1_IR : BOOL;
+	pallet_conveyor_1_FWD : BOOL;
+	pallet_fork_left_EN : BOOL;
+	pallet_fork_left_FB : BOOL;
+	pallet_lifter_AXIS : REAL;
+	pallet_lifter_TGT_POS : REAL;
+	PalletHandlerIsReady : BOOL;
+	cartboard_TRIG : BOOL;
+	PusherXActuatorFaultE : BOOL;
+	PusherXDisableSensorFaultE : BOOL;
+	PusherXEnableSensorFaultE : BOOL;
+	PusherZActuatorFaultE : BOOL;
+	PusherZDisableSensorFaultE : BOOL;
+	PusherZEnableSensorFaultE : BOOL;
+	SlideRailRightActuatorFaultE : BOOL;
+	SlideRailRightDisableFaultE : BOOL;
+	SlideRailRightEnableFaultE : BOOL;
+	VacuumBoxCraneActuatorFaultE : BOOL;
+	VacuumBoxCraneDisableFaultE : BOOL;
+	VacuumBoxCraneEnableFaultE : BOOL;
+	CardboardActuatorFaultE : BOOL;
+	CardboardDisableFaultE : BOOL;
+	BoxCraneFaultSignalE : BOOL;
+	GantryCraneFaultSignalE : BOOL;
+	CardboardEnableFaultE : BOOL;
+	TurnpusherActuatorFaultE : BOOL;
+	TurnpusherDisableSensorFaultE : BOOL;
+	TurnpusherEnableSensorFaultE : BOOL;
+	PusherActuatorFaultE : BOOL;
+	PusherDisableSensorFaultE : BOOL;
+	PusherEnableSensorFaultE : BOOL;
+	ConveyorIfActuatorFaultE : BOOL;
+	ConveyorIfDisableSensorFaultE : BOOL;
+	ConveyorIfEnableSensorFaultE : BOOL;
+	ConveyorTurn1ActuatorFaultE : BOOL;
+	ConveyorTurn1DisableSensorFaultE : BOOL;
+	ConveyorTurn1EnableSensorFaultE : BOOL;
+	ConveyorEndActuatorFaultE : BOOL;
+	ConveyorEndDisableSensorFaultE : BOOL;
+	ConveyorEndEnableSensorFaultE : BOOL;
+	CarriagePositionFaultSignalE : BOOL;
+	PalletForkActuatorFaultE : BOOL;
+	PalletForkDisableSensorFaultE : BOOL;
+	PalletForkEnableSensorFaultE : BOOL;
+	PalletLifterFaultSignalE : BOOL;
+	PalletConv1ActuatorFaultE : BOOL;
+	PalletConv1DisableSensorFaultE : BOOL;
+	PalletConv1SensorFaultE : BOOL;
+	PalletConv2FaultSignalE : BOOL;
+	LaserSensor2IRFault : BOOL;
+	Var2 : BOOL;
+	Var1 : BOOL;
+	LogFile : STRING[3000];
+	MainMessage : STRING[30];
+	OnPhaseStop : BOOL;
+	ImmediateStop : BOOL;
+	ImmediateStopButton : BOOL;
+	EmergencyStopButton : BOOL;
+	OnPhaseStopPerforming : BOOL;
+	OnPhaseStopButton : BOOL;
+	laser_sensor_IR_enabled : BOOL;
+	pallet_light_barrier_enabled : BOOL;
+	laser_sensor_2_IR_enabled : BOOL;
+	pallet_light_barrier2_enabled : BOOL;
+	InfoCarousel : STRING[20];
+	HomeButton : BOOL;
+	ErrorButton : BOOL;
+	OrangeLight : BOOL;
+	YellowLight : BOOL;
+	ResetEnable : BOOL;
+	WhiteLight : BOOL;
+	BlueLight : BOOL;
+	GreenLight : BOOL;
+	RedLight : BOOL;
+	SimPusherActuatorFaultE : BOOL;
+	SimPusherDisableSensorFaultE : BOOL;
+	SimBoxCraneFaultSignalE : BOOL;
+	SimVacuumBoxCraneActuatorFaultE : BOOL;
+	SimPalletForkActuatorFaultE : BOOL;
+	SimPalletForkEnableSensorFaultE : BOOL;
+	OperationTypeString : STRING[20];
+	CounterPallet : INT;
+END_VAR

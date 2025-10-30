@@ -1,0 +1,25 @@
+VAR
+	Address : UDINT;
+	MachineState : State_type;
+	ConveyorEnable : BOOL;
+	CutterEnable : BOOL;
+	Cutter : CamFB;
+	Conveyor : CamFB;
+	InitializeConveyor : BOOL;
+	InitializeCutter : BOOL;
+	ConveyorDisable : BOOL;
+	CutterDisable : BOOL;
+	ConveyorState : State_type;
+	CutterState : State_type;
+	ConveyorAxisEnable : BOOL;
+	CutterAxisEnable : BOOL;
+	FutureStop : BOOL;
+	CoveyorState : BOOL;
+	ConveyorStopped : BOOL;
+	CutterStopped : BOOL;
+	ConveyorParameters : MpAxisBasicParType;
+	CutterParameters : MpAxisBasicParType;
+	EmergencyStateMachine : INT;
+	ToggleLights : BOOL;
+	Count : DINT;
+END_VAR

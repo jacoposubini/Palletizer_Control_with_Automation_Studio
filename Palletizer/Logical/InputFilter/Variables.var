@@ -1,0 +1,6 @@
+VAR
+	Laser1Filter : filter_FB;
+	Laser2Filter : filter_FB;
+	palletLightBarrier1Filter : filter_FB;
+	palletLightBarrier2Filter : filter_FB;
+END_VAR
